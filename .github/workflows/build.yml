@@ -1,0 +1,43 @@
+# Builds Port Detective on GitHub's Mac machines.
+#
+# - Every push to main builds the app; download it from that run's page under Actions.
+# - Publishing a release (Releases > Draft a new release > Publish) builds the app
+#   and attaches PortDetective.zip to the release, which is what the website's
+#   Download button links to.
+name: Build app
+
+on:
+  push:
+    branches: [main]
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build the app
+        # Try one app for both Apple silicon and Intel; fall back to this machine's chip.
+        run: UNIVERSAL=1 bash build.sh || bash build.sh
+
+      - name: Zip the app
+        run: ditto -c -k --keepParent "build/Port Detective.app" "build/PortDetective.zip"
+
+      - name: Keep the build with this run
+        uses: actions/upload-artifact@v4
+        with:
+          name: PortDetective
+          path: build/PortDetective.zip
+
+      - name: Attach the app to the release
+        if: github.event_name == 'release'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh release upload "${{ github.event.release.tag_name }}" build/PortDetective.zip --clobber
