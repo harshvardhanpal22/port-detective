@@ -12,7 +12,7 @@
 <p align="center">
   <a href="../../releases/latest"><b>Download</b></a> &nbsp;·&nbsp;
   <a href="https://harshvardhanpal22.github.io/port-detective/">Website</a> &nbsp;·&nbsp;
-  <a href="https://buymeacoffee.com/harshvardhanpal22">Buy me a coffee</a>
+  <a href="https://buymeacoffee.com/harshvardhanpal">Buy me a coffee</a>
 </p>
 
 ---
@@ -81,7 +81,7 @@ The website lives in `docs/` and is served by GitHub Pages.
 
 Port Detective is free, with no ads and no tracking, and it always will be. If it found you a slow cable or a weak charger, you can support its development:
 
-<a href="https://buymeacoffee.com/harshvardhanpal22"><img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-Support%20Port%20Detective-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=black" alt="Buy me a coffee"></a>
+<a href="https://buymeacoffee.com/harshvardhanpal"><img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-Support%20Port%20Detective-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=black" alt="Buy me a coffee"></a>
 
 It’s completely optional, and every feature stays free for everyone. Starring the project, reporting bugs and telling friends help just as much.
 
